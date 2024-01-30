@@ -1,0 +1,23 @@
+
+<div class="table table-responsive">
+    <table class="table table-hover">
+        <thead class="thead-light text-capitalize">
+            <tr>
+                <th>sr.no</th>
+                <th>first name</th>
+                <th>last name</th>
+                <th>email</th>
+                <th>contact</th>
+            </tr>
+        </thead>
+        <tbody class="">
+            <tr *ngFor="let std of stdTable; index as i">
+                <td>{{i + 1}}</td>
+                <td>{{std.fname}}</td>
+                <td>{{std.lname}}</td>
+                <td>{{std.email}}</td>
+                <td>+91 {{std.contact}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,31 @@
+
+<form (submit)="onSubmit()">
+    <div class="card bg-light">
+        <div class="card-body">
+            <div class="text-center">
+                <h3 class="text-capitalize mb-4">student form</h3>
+            </div>
+            <div class="form-group">
+                <label for="fname" class="sr-only">first Name</label>
+                <input type="text" required #stdfname id="fname" class="form-control mb-3" placeholder="enter first name">
+            </div>
+            <div class="form-group">
+                <label for="lname" class="sr-only">last Name</label>
+                <input type="text" required #stdlname id="lname" class="form-control mb-3" placeholder="enter last name">
+            </div>
+            <div class="form-group">
+                <label for="email" class="sr-only">first Name</label>
+                <input type="email" required #stdemail id="email" class="form-control mb-3" placeholder="enter your email">
+            </div>
+            <div class="form-group">
+                <label for="contact" class="sr-only">first Name</label>
+                <input type="number" required #stdcontact id="contact" class="form-control mb-3" placeholder="enter your contact">
+            </div>
+        </div>
+        <div class="card-footer text-right">
+            <button class="btn btn-outline-primary" type="submit">
+                Add Student
+            </button>
+        </div>
+    </div>
+</form>
