@@ -59,7 +59,6 @@ export class AppComponent {
        lname.value = "",
        email.value = "",
        contact.value = ""
-       
     }
   }
 }

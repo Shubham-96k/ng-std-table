@@ -14,28 +14,48 @@ export class StdformComponent implements OnInit {
   @ViewChild("stdemail") stdemail !: ElementRef;
   @ViewChild("stdcontact") stdcontact !: ElementRef;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
 
-  onSubmit(){
-    // eve.preventDefault();
-    event?.preventDefault();
-    console.log('hello world');
+  // onSubmit(){
+  //   // eve.preventDefault();
+  //   event?.preventDefault();
+  //   console.log('hello world');
+  //   let stdobj : Istd = {
+  //     fname : this.stdfname.nativeElement.value,
+  //     lname : this.stdlname.nativeElement.value,
+  //     email : this.stdemail.nativeElement.value,
+  //     contact : this.stdcontact.nativeElement.value,
+  //   }
+  //   console.log(stdobj);
+    
+  //   this.stdTable.emit(stdobj);
+
+  //   this.stdfname.nativeElement.value = "";
+  //   this.stdlname.nativeElement.value = "";
+  //   this.stdemail.nativeElement.value = "";
+  //   this.stdcontact.nativeElement.value = "";
+  // }
+
+
+  addstd(){
     let stdobj : Istd = {
       fname : this.stdfname.nativeElement.value,
       lname : this.stdlname.nativeElement.value,
       email : this.stdemail.nativeElement.value,
-      contact : this.stdcontact.nativeElement.value,
+      contact : this.stdcontact.nativeElement.value
     }
-    console.log(stdobj);
-    
-    this.stdTable.emit(stdobj);
+    if(!Object.values(stdobj).includes("")){
 
-    this.stdfname.nativeElement.value = "";
-    this.stdlname.nativeElement.value = "";
-    this.stdemail.nativeElement.value = "";
-    this.stdcontact.nativeElement.value = "";
+      this.stdTable.emit(stdobj)
+
+      this.stdfname.nativeElement.value = "";
+      this.stdlname.nativeElement.value = "";
+      this.stdemail.nativeElement.value = "";
+      this.stdcontact.nativeElement.value = "";
+    }
   }
+
 }
