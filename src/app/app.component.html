@@ -3,12 +3,80 @@
 
 <div class="container">
   <div class="row">
+    <div class="text-center mb-4 mx-auto">
+      <h3>ng-student-Table by using two different component with the help of @input and @output</h3>
+    </div>
     <div class="col-md-5">
       <app-stdform
       (stdTable)="getStdobj($event)"></app-stdform>
     </div>
     <div class="col-md-7">
       <app-stdtable [stdTable] = "stdsArray"></app-stdtable>
+    </div>
+  </div>
+</div>
+
+<hr>
+<hr>
+
+<div class="text-center mb-4 mx-auto">
+  <h3>ng-student-Table within same component</h3>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center">
+              <h3 class="text-capitalize mb-4">student form</h3>
+          </div>
+          <div class="form-group">
+              <label for="fname" class="sr-only">first Name</label>
+              <input type="text"  #fname id="fname" class="form-control mb-3" placeholder="enter first name">
+          </div>
+          <div class="form-group">
+              <label for="lname" class="sr-only">last Name</label>
+              <input type="text"  #lname id="lname" class="form-control mb-3" placeholder="enter last name">
+          </div>
+          <div class="form-group">
+              <label for="email" class="sr-only">first Name</label>
+              <input type="email"  #email id="email" class="form-control mb-3" placeholder="enter your email">
+          </div>
+          <div class="form-group">
+              <label for="contact" class="sr-only">first Name</label>
+              <input type="number"  #contact id="contact" class="form-control mb-3" placeholder="enter your contact">
+          </div>
+        </div>
+        <div class="card-footer text-right">
+            <button class="btn btn-outline-primary" (click)="addstd(fname,lname,email,contact)">
+                Add Student
+            </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="table table-responsive">
+        <table class="table table-hover">
+            <thead class="thead-light text-capitalize">
+                <tr>
+                    <th>sr.no</th>
+                    <th>first name</th>
+                    <th>last name</th>
+                    <th>email</th>
+                    <th>contact</th>
+                </tr>
+            </thead>
+            <tbody class="">
+                <tr *ngFor="let std of stdsArray2; index as i">
+                    <td>{{i + 1}}</td>
+                    <td>{{std.fname}}</td>
+                    <td>{{std.lname}}</td>
+                    <td>{{std.email}}</td>
+                    <td>+91 {{std.contact}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     </div>
   </div>
 </div>

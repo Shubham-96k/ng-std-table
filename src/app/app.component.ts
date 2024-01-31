@@ -28,11 +28,38 @@ export class AppComponent {
       contact: 8795462130
     },
   ]
+  stdsArray2 : Array<Istd> = [
+    {
+      fname : "jhon",
+      lname : "doe",
+      email : "jd@gmail.com",
+      contact: 1234567890
+    },
+  ]
 
   getStdobj(eve : Istd){
     console.log(eve);
     
     // this.stdsArray.unshift(eve);
     this.stdsArray.unshift(eve);
+  }
+
+  addstd(fname:HTMLInputElement,lname:HTMLInputElement,email:HTMLInputElement,contact:HTMLInputElement){
+    if(fname.value && lname.value && email.value && contact.value){
+       let obj : Istd = {
+        fname : fname.value,
+        lname : lname.value,
+        email : email.value,
+        contact : +contact.value
+       }
+      //  console.log(obj);
+       this.stdsArray2.push(obj);
+
+       fname.value = "",
+       lname.value = "",
+       email.value = "",
+       contact.value = ""
+       
+    }
   }
 }
